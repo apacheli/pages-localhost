@@ -10,10 +10,6 @@ See how GitHub Pages serves your files but locally and before you deploy it.
 $ deno run --allow-read --allow-net https://raw.githubusercontent.com/apacheli/pages-localhost/master/main.ts [root] [port]
 ```
 
-> [!note]
-> `root` and `port` are optional and will automatically read from the current
-> working directory.
-
 ## License
 
 [LICENSE.txt](LICENSE.txt)
