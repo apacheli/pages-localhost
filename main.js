@@ -5,20 +5,6 @@ const ignore = [
   ".gitignore",
 ];
 
-export async function build(root, directories, files) {
-  await Deno.mkdir(root, { recursive: true });
-  await Promise.all(
-    directories.map((directory) =>
-      Deno.mkdir(`${root}/${directory}`, { recursive: true })
-    ),
-  );
-  const promises = [];
-  for (const file in files) {
-    promises.push(Deno.writeTextFile(`${root}/${file}`, render(files[file])));
-  }
-  await Promise.all(promises);
-}
-
 const types = {
   ".7z": "application/x-7z-compressed",
   ".apng": "image/apng",
